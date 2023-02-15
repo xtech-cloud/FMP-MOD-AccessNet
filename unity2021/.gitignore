@@ -1,0 +1,19 @@
+
+/_dist_/
+/_build_/
+/AccessNet/Assets/TextMesh Pro/
+/AccessNet/Assets/TextMesh Pro.meta
+/AccessNet/Assets/Plugins/
+/AccessNet/Assets/Plugins.meta
+/AccessNet/Assets/3rd/
+/AccessNet/Assets/3rd.meta
+/AccessNet/Library/
+/AccessNet/obj/
+/AccessNet/Logs/
+/AccessNet/Temp/
+/AccessNet/UserSettings/
+/AccessNet/*.sln
+/AccessNet/*.csproj
+/AccessNet/.vsconfig
+/AccessNet/.vs/
+/.UNITY_HOME.env

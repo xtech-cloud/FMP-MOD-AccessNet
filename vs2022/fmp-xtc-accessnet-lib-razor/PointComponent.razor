@@ -1,0 +1,36 @@
+
+@page "/xtc/accessnet/point"
+
+<Space Direction="DirectionVHType.Vertical">
+    <SpaceItem>
+        <Button Type="@ButtonType.Primary" OnClick="@__debugClick">Call</Button>
+    </SpaceItem>
+
+    <SpaceItem>
+        <Text>Online:</Text>
+        <TextArea @bind-Value="@__debugOnline" Rows="4" ReadOnly="true" />
+    </SpaceItem>
+
+    <SpaceItem>
+        <Text>Offline:</Text>
+        <TextArea @bind-Value="@__debugOffline" Rows="4" ReadOnly="true" />
+    </SpaceItem>
+
+    <SpaceItem>
+        <Text>HeartBeat:</Text>
+        <TextArea @bind-Value="@__debugHeartBeat" Rows="4" ReadOnly="true" />
+    </SpaceItem>
+
+    <SpaceItem>
+        <Text>Retrieve:</Text>
+        <TextArea @bind-Value="@__debugRetrieve" Rows="4" ReadOnly="true" />
+    </SpaceItem>
+
+    <SpaceItem>
+        <Text>List:</Text>
+        <TextArea @bind-Value="@__debugList" Rows="4" ReadOnly="true" />
+    </SpaceItem>
+
+</Space>
+@code {
+}

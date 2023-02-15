@@ -1,0 +1,59 @@
+
+syntax = "proto3";
+import "shared.proto";
+
+option csharp_namespace = "XTC.FMP.MOD.AccessNet.LIB.Proto";
+package xtc.fmp.accessnet;
+
+// 接入点
+service Point {
+    // 上线
+    rpc Online(PointOnlineRequest) returns (UuidResponse) {}
+    // 下线
+    rpc Offline(PointOfflineRequest) returns (UuidResponse) {}
+    // 心跳
+    rpc HeartBeat(PointHeartBeatRequest) returns (UuidResponse) {}
+    // 读取
+    rpc Retrieve(UuidRequest) returns (PointRetrieveResponse) {}
+    // 列举
+    rpc List(PointListRequest) returns (PointListResponse) {}
+}
+
+// 接入点上线的请求
+// uuid 可留空
+message PointOnlineRequest {
+    PointEntity point = 1; // 接入点实体
+}
+
+
+// 接入点下载的请求
+message PointOfflineRequest {
+    string uuid = 1; // 接入点的uuid
+}
+
+// 接入点心跳的请求
+message PointHeartBeatRequest {
+    string uuid = 1; // 接入点的uuid
+}
+
+// 接入点读取的回复
+message PointRetrieveResponse
+{
+    Status status = 1; // 回复的状态
+    PointEntity point = 2; // 接入点实体
+}
+
+// 接入点的列举请求
+message PointListRequest
+{
+    int64 offset = 1;  // 偏移值
+    int64 count = 2;  // 数量
+}
+
+// 接入点的列举回复
+message PointListResponse
+{
+    Status status = 1;  // 状态
+    int64 total = 2;  // 总数
+    repeated PointEntity pointS = 3;// 接入点实体的列表
+}

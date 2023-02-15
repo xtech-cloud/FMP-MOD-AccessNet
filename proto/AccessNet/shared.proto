@@ -1,0 +1,69 @@
+
+syntax = "proto3";
+
+option csharp_namespace = "XTC.FMP.MOD.AccessNet.LIB.Proto";
+package xtc.fmp.accessnet;
+
+// 状态
+message Status
+{
+    int32 code = 1;  // 状态码
+    string message = 2;  // 状态信息
+}
+
+// 空白请求
+message BlankRequest
+{
+}
+
+// 空白回复
+message BlankResponse
+{
+    Status status = 1;  // 状态
+}
+
+// 作用域的请求
+message ScopeRequest
+{
+    string scope = 1;  // 作用域
+}
+
+// 作用域的回复
+message ScopeResponse
+{
+    Status status = 1;  // 状态
+    string scope = 2;  // 作用域
+}
+
+// UUID的请求
+message UuidRequest
+{
+    string uuid = 1;  // 唯一识别码
+}
+
+// UUID的回复
+message UuidResponse
+{
+    Status status = 1;  // 状态
+    string uuid = 2;  // 唯一识别码
+}
+
+// 接入点实体
+message PointEntity
+{
+    string uuid = 1; // 全局唯一标识符
+    string serialNumber = 2; // 序列号
+
+    string deviceName = 100; // 设备名称
+    string deviceModel = 101; // 设备型号
+    string deviceType = 102; // 设备类型
+
+    string operatingSystemFamily = 200; // 操作系统系统
+    string operatingSystemVersion = 201; // 操作系统具体版本
+
+    string applicationCompany = 300; // 应用程序组织名
+    string applicationProduct = 301; // 应用程序产品名
+    string applicationVersion = 302; // 应用程序版本
+    int64 applicationActivated = 303; // 应用程序激活时间
+    int32 applicationExpiry = 304; // 应用程序有效期
+}
