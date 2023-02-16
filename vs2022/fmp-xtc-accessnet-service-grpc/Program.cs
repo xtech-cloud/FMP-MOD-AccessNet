@@ -8,7 +8,7 @@ using XTC.FMP.MOD.AccessNet.App.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddGrpc();
+builder.Services.AddGrpc().AddJsonTranscoding();
 builder.Services.AddGrpcReflection();
 builder.Services.AddGrpcHealthChecks()
                 .AddCheck("AccessNet", () => HealthCheckResult.Healthy());
@@ -35,7 +35,6 @@ app.Use(async (context, next) =>
     // Do logging or other work that doesn't write to the Response.
 });
 app.UseGrpcWeb();
-
 
 app.MapGrpcService<HealthyService>().EnableGrpcWeb();
 
