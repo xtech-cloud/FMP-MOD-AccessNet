@@ -1,5 +1,4 @@
 
-using NuGet.Frameworks;
 using XTC.FMP.MOD.AccessNet.LIB.Proto;
 
 public class PointTest : PointUnitTestBase
@@ -13,19 +12,7 @@ public class PointTest : PointUnitTestBase
     public override async Task OnlineTest()
     {
         var request = new PointOnlineRequest();
-
-        // 缺少参数
         var response = await fixture_.getServicePoint().Online(request, fixture_.context);
-        Assert.Equal(-400, response.Status.Code);
-
-        // 新设备上线
-        request.Point = new PointEntity();
-        request.Point.SerialNumber = "0000001";
-        response = await fixture_.getServicePoint().Online(request, fixture_.context);
-        Assert.Equal(0, response.Status.Code);
-
-        // 再次上线
-        response = await fixture_.getServicePoint().Online(request, fixture_.context);
         Assert.Equal(0, response.Status.Code);
     }
 

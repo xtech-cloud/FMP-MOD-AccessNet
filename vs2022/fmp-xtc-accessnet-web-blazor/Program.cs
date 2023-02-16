@@ -27,12 +27,6 @@ public partial class Program
         permissioS[Permissions.HealthyRetrieve] = "";
         permissioS[Permissions.HealthyDelete] = "";
 
-        permissioS[Permissions.PointCreate] = "";
-        permissioS[Permissions.PointUpdate] = "";
-        permissioS[Permissions.PointRetrieve] = "";
-        permissioS[Permissions.PointDelete] = "";
-
-
         var channel = GrpcChannel.ForAddress("https://localhost:19000/", new GrpcChannelOptions
         {
             HttpHandler = new GrpcWebHandler(new HttpClientHandler())
