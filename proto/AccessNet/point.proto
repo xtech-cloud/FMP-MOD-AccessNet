@@ -1,6 +1,7 @@
 
 syntax = "proto3";
 import "shared.proto";
+import "google/api/annotations.proto";
 
 option csharp_namespace = "XTC.FMP.MOD.AccessNet.LIB.Proto";
 package xtc.fmp.accessnet;
@@ -16,7 +17,11 @@ service Point {
     // 读取
     rpc Retrieve(UuidRequest) returns (PointRetrieveResponse) {}
     // 列举
-    rpc List(PointListRequest) returns (PointListResponse) {}
+    rpc List(PointListRequest) returns (PointListResponse) {
+      option (google.api.http) = {
+        get: "/v1/xtc/accessnet/point/list",
+      };
+    }
 }
 
 // 接入点上线的请求
