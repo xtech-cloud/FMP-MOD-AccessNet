@@ -19,7 +19,8 @@ service Point {
     // 列举
     rpc List(PointListRequest) returns (PointListResponse) {
       option (google.api.http) = {
-        get: "/v1/xtc/accessnet/point/list",
+        post: "/v1/xtc/accessnet/point/list",
+        body: "*",
       };
     }
 }
