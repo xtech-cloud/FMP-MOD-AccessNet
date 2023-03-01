@@ -32,6 +32,7 @@ namespace XTC.FMP.MOD.AccessNet.App.Service
         {
             var point = new LIB.Proto.PointEntity()
             {
+                Uuid = _entity.Uuid.ToString(),
                 SerialNumber = _entity.SerialNumber,
                 DeviceName = _entity.DeviceName,
                 DeviceModel = _entity.DeviceModel,
