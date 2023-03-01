@@ -53,7 +53,7 @@ namespace XTC.FMP.MOD.AccessNet.LIB.Unity
             int expiry = 90;
             var request = new PointOnlineRequest();
             request.Point = new PointEntity();
-            request.Point.SerialNumber = settings_["devicecode"].AsString();
+            request.Point.SerialNumber = settings_["serialnumber"].AsString();
             request.Point.DeviceName = SystemInfo.deviceName;
             request.Point.DeviceModel = SystemInfo.deviceModel;
             request.Point.DeviceType = SystemInfo.deviceType.ToString();
